@@ -4,12 +4,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  &--bg--font-color {
+    background: linear-gradient( rgba(0, 0, 0, 0.5)), url(../img/bgorder.jpg) center top no-repeat;
+    color: #fff;
+    background-size: 100%;
+    
+  }
 }
 
 .section__title {
   font-size: 48px;
   font-weight: bold;
-  margin-bottom: 53px;
+  margin-bottom: 28px;
   text-align: center;
   text-transform: uppercase;
 }

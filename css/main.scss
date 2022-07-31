@@ -4,11 +4,14 @@ $baseFontSize: 18px;
 //color
 $gray: #F8FAF9;
 
+//z-index
+$z-fixed-menu: 100;
+
 //normalize
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 
 //setups
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;700&display=swap');
 @import "layout";
 
 //components
@@ -21,3 +24,8 @@ $gray: #F8FAF9;
 @import "components/headline";
 @import "components/benefits";
 @import "components/benefit";
+@import "components/reviews";
+@import "components/interactive-avatar";
+@import "components/form";
+@import "components/radio";
+@import "components/fixed-menu";
