@@ -1,6 +1,6 @@
 .hero {
   background: url(../img/main.png) center top no-repeat ;
-  background-size: 100%;
+  background-size: cover;
   height: 100vh;
   min-height: 650px;
   color: #fff;
@@ -11,7 +11,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 22px 80px 65px;
+  padding: 24px 0 60px;
 }
 
 .hero__title-section {
