@@ -1,0 +1,12 @@
+.contacts {
+  font-style: normal;
+  font-style: rem(21px);
+  color: #292929;
+
+  @include phones {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

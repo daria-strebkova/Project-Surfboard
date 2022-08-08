@@ -1,22 +1,35 @@
 .benefits-section {
-  padding: 107px 80px 114px;
+  padding: rem(107px) 0 rem(114px);
 }
 
 .benefits {
   display: flex;
+
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .benefits__item {
   flex: 1;
-  padding: 0 3%;
+  padding: 0 2%;
   position: relative;
+
+  @include phones {
+    padding: 0;
+    margin-bottom: rem(43px);
+  }
 
   &:before {
     content: url(../img/dots.png);
     position: absolute;
-    top: 64px;
+    top: rem(64px);
     right: 0;
     transform: translate(50%);
+    
+    @include tablets {
+      display: none;
+    }
   }
 
   &:first-child {

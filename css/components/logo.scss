@@ -1,0 +1,9 @@
+.logo {
+  @include tablets {
+    padding: 2% 0 2% 3%;
+  }
+
+  @include phones {
+    padding: 5% 0 2% 2%;
+  }
+}
