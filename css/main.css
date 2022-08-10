@@ -642,12 +642,12 @@ img {
 
 .reviews__switcher {
   margin-top: 0.8333333333rem;
-  margin-left: 39%;
-}
-@media screen and (max-width: 480px) {
-  .reviews__switcher {
-    margin-left: 30%;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .interactive-avatar {

@@ -74,9 +74,6 @@
 
 .reviews__switcher {
   margin-top: rem(15px);
-  margin-left: 39%;
-
-  @include phones {
-    margin-left: 30%;
-  }
+  display: flex;
+  justify-content: center;
 }
