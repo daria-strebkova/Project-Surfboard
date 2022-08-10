@@ -33,9 +33,13 @@ body {
 
 .container {
   max-width: $containerWidth;
-  width: 100%;
+  width: 96%;
   margin: 0 auto;
   position: relative;
+
+  @include tablets {
+    width: 100%;
+  }
 }
 
 

@@ -37,9 +37,14 @@ body {
 
 .container {
   max-width: 940px;
-  width: 100%;
+  width: 96%;
   margin: 0 auto;
   position: relative;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
 }
 
 h1,
@@ -235,12 +240,12 @@ img {
 
 @media screen and (max-width: 768px) {
   .logo {
-    padding: 2% 0 2% 3%;
+    padding: 3% 0 2% 3%;
   }
 }
 @media screen and (max-width: 480px) {
   .logo {
-    padding: 5% 0 2% 2%;
+    padding: 4% 0 2% 2%;
   }
 }
 
@@ -901,6 +906,7 @@ img {
   right: 0;
   padding: 1.2777777778rem 0;
   background: #fff;
+  padding: 0 1.6666666667rem;
 }
 
 .footer__container {
@@ -954,7 +960,7 @@ img {
   height: 1.1111111111rem;
 }
 .socials__item:not(:first-child) {
-  margin-left: 0.2777777778rem;
+  margin-left: 0.5555555556rem;
 }
 .socials__link {
   width: 100%;
