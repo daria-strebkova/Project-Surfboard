@@ -1258,10 +1258,14 @@ button {
   margin-bottom: 0;
 }
 
+.arrow {
+  height: 100%;
+}
+
 .arrow__left {
   position: absolute;
   top: 50%;
-  left: -5%;
+  left: 0;
 }
 @media screen and (max-width: 768px) {
   .arrow__left {
@@ -1279,7 +1283,7 @@ button {
 .arrow__right {
   position: absolute;
   top: 50%;
-  left: 100%;
+  right: 0;
 }
 @media screen and (max-width: 768px) {
   .arrow__right {

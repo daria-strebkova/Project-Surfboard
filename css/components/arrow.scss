@@ -1,7 +1,11 @@
+.arrow {
+  height: 100%;
+}
+
 .arrow__left {
   position: absolute;
   top: 50%;
-  left: -5%;
+  left: 0;
 
   @include tablets {
     top: 30%;
@@ -17,7 +21,7 @@
 .arrow__right {
   position: absolute;
   top: 50%;
-  left: 100%;
+  right: 0;
 
   @include tablets {
     top: 30%;
