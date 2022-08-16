@@ -10,6 +10,11 @@
     color: #fff;
     background-size: cover;
   }
+
+  &--bg--color--gray {
+    background-color: $gray;
+    background-size: cover;
+  }
 }
 
 .section__title {

@@ -1,12 +1,12 @@
 .hamburger {
-  width: 26px;
-  height: 28px;
+  width: rem(26px);
+  height: rem(28px);
   display: inline-block;
   flex-direction: column;
   justify-content: space-between;
   margin-right: rem(26px);
   display: none;
-  margin-top: rem(22px);
+  margin-top: rem(27px);
 
   @include tablets {
     display: inline-flex;
@@ -18,11 +18,8 @@
   }
 }
 
-.hamburger__plank {
-  display: block;
-  background: #fff;
-  height: 4px;
-  border-radius: 10px;
-  margin-bottom: rem(4px);
-  
+.hamburger__icon {
+  height: rem(26px);
+  width: rem(24px);
+  fill: #fff;
 }

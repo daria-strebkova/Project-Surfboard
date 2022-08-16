@@ -1,0 +1,37 @@
+.arrow__left {
+  position: absolute;
+  top: 50%;
+  left: -5%;
+
+  @include tablets {
+    top: 30%;
+    left: 17%;
+  }
+
+  @include phones {
+    top: 21%;
+    left: 13%;
+  }
+}
+
+.arrow__right {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+
+  @include tablets {
+    top: 30%;
+    left: 78%;
+  }
+
+  @include phones {
+    top: 21%;
+    left: 81%;
+  }
+}
+
+.arrow__icon {
+  fill: #000;
+  height: rem(29px);
+  width: rem(15px);
+}
