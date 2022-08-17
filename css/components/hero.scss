@@ -1,9 +1,10 @@
 .hero {
-  background: url(../img/bg.png) center bottom 30% no-repeat;
+  background: url(../img/bg.png) center bottom 30% no-repeat, rgba(0,0,0,.2);
   background-size: cover;
   height: 100vh;
   min-height: rem(650px);
   color: #fff;
+  background-blend-mode: darken;
 
   @include tablets {
     background-position: right 24% top;

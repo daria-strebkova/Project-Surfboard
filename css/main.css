@@ -102,11 +102,12 @@ button {
 }
 
 .hero {
-  background: url(../img/bg.png) center bottom 30% no-repeat;
+  background: url(../img/bg.png) center bottom 30% no-repeat, rgba(0, 0, 0, 0.2);
   background-size: cover;
   height: 100vh;
   min-height: 36.1111111111rem;
   color: #fff;
+  background-blend-mode: darken;
 }
 @media screen and (max-width: 768px) {
   .hero {
@@ -304,6 +305,11 @@ button {
 }
 .menu__item:last-child {
   margin-right: 0;
+}
+@media screen and (max-width: 480px) {
+  .menu__item {
+    margin-right: 0;
+  }
 }
 
 .menu__link {
@@ -1184,8 +1190,8 @@ button {
 }
 .fullscreen-menu__close {
   position: absolute;
-  top: 2.3333333333rem;
-  right: 2.3333333333rem;
+  top: 1.5rem;
+  right: 0.4444444444rem;
 }
 .fullscreen-menu.open {
   left: 0;
@@ -1256,6 +1262,12 @@ button {
 }
 .dropdown__options__item:last-child {
   margin-bottom: 0;
+}
+
+.dropdown__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .arrow {
