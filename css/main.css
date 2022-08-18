@@ -1080,6 +1080,12 @@ button {
 }
 .products__desc {
   margin-bottom: 1.3333333333rem;
+  margin-right: 33px;
+}
+@media screen and (max-width: 768px) {
+  .products__desc {
+    margin-right: 0;
+  }
 }
 .products__size {
   display: -webkit-box;
@@ -1169,6 +1175,14 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
+}
+.products__img {
+  margin-left: 2.8888888889rem;
+}
+@media screen and (max-width: 768px) {
+  .products__img {
+    margin-left: 0;
+  }
 }
 
 .fullscreen-menu {

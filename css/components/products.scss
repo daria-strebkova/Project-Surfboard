@@ -53,6 +53,11 @@
 
   &__desc {
     margin-bottom: rem(24px);
+    margin-right: 33px;
+
+    @include tablets {
+      margin-right: 0;
+    }
   }
 
   &__size {
@@ -124,5 +129,13 @@
     font-weight: 700;
     text-transform: uppercase;
     color: #fff;
+  }
+
+  &__img {
+    margin-left: rem(52px);
+
+    @include tablets {
+      margin-left: 0;
+    }
   }
 }
