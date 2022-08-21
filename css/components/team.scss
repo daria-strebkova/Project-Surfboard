@@ -1,0 +1,105 @@
+.team {
+  display: flex;
+  justify-content: space-between;
+
+  @include tablets {
+    padding: 0 10%;
+    flex-direction: column;
+    align-items: center;
+
+    &--version--desktop {
+      display: none;
+    }
+    
+  }
+
+  &--version--mobile {
+    display: none;
+  
+    @include tablets {
+      display: flex;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    text-align: center;
+    margin-right: rem(20px);
+    min-width: rem(220px);
+    position: relative;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+
+
+    @include tablets {
+      flex: initial;
+      margin-right: 0;
+    }
+
+    &--version--mobile {
+      margin-bottom: rem(10px);
+    }
+  }
+
+  &__member {
+    height: rem(290px);
+    margin-bottom: rem(20px);
+  }
+
+  &__title {
+    color: #292929;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-style: rem(21px);
+    font-weight: bold;
+    margin-bottom: rem(8px);
+
+    @include tablets {
+      margin-bottom: rem(16px);
+    }
+  }
+
+  &__content {
+    overflow: hidden;
+    transition: height .3s;
+    height: 0;
+
+    &--version--desktop{
+      position: absolute;
+      top: 100%;
+
+      @include tablets {
+        display: none;
+      }
+    }
+  }
+
+  &__img {
+    @include tablets{
+      display: inline;
+    }
+  }
+
+  &__profession {
+    font-weight: 400;
+
+    @include tablets {
+      font-weight: 700;
+    }
+  }
+
+  &__desc {
+    font-weight: 300;
+
+    @include tablets{
+      padding: 0 13%;
+    }
+    
+  }
+}
+
+
+

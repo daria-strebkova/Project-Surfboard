@@ -1,6 +1,12 @@
 .products {
   &__wrap-list {
     overflow: hidden;
+
+    .bx-wrapper {
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
   }
 
   &__list {

@@ -41,8 +41,8 @@
   
   &--icon--close {
     .button__icon {
-        width: 20px;
-        height: 20px;
+        width: rem(20px);
+        height: rem(20px);
         fill: #fff;
     }
 }

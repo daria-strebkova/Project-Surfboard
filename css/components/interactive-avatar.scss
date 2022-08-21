@@ -1,4 +1,4 @@
-.interactive-avatar {
+.reviews__switcher-item {
   width: rem(74px);
   height: rem(74px);
   border: rem(6px) solid transparent;
@@ -6,10 +6,10 @@
   overflow: hidden;
   position: relative;
   display: inline-block;
+}
 
-  &--active {
-    border-color: #FEDB3F;
-  }
+.active {
+  border-color: #FEDB3F;
 }
 
 .interactive-avatar__link {
