@@ -96,7 +96,7 @@ $(".interactive-avatar__link").click(e => {
 
 ///form///
 
-$('.form').submit(e => {
+$(".form").submit((e) => {
   e.preventDefault();
 
   const form = $(e.currentTarget);
@@ -116,7 +116,7 @@ $('.form').submit(e => {
     }
   });
 
-   $fancybox.open({
+   $.fancybox.open({
      src: "#modal",
      type: "inline"
    })
@@ -125,5 +125,5 @@ $('.form').submit(e => {
 $(".app-close-modal").click(e => {
   e.preventDefault();
 
-  $fancybox.close();
+  $.fancybox.close();
 })

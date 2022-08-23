@@ -2,6 +2,7 @@
   position: absolute;
   top: 50%;
   left: 0;
+  z-index: 1;
 
   @include tablets {
     top: 30%;
@@ -18,6 +19,7 @@
   position: absolute;
   top: 50%;
   right: 0;
+  z-index: 1;
 
   @include tablets {
     top: 30%;

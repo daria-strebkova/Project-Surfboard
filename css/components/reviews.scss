@@ -6,6 +6,7 @@
   background: $gray;
   padding: rem(42px) rem(42px);
   min-height: rem(340px);
+  display: flex;
 
   @include tablets {
     padding: rem(56px) rem(42px);

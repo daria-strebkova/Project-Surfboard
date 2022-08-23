@@ -27,6 +27,7 @@
     margin-right: rem(20px);
     min-width: rem(220px);
     position: relative;
+    min-height: rem(420px);
     
     &:last-child {
       margin-right: 0;
@@ -36,6 +37,7 @@
     @include tablets {
       flex: initial;
       margin-right: 0;
+      min-height: rem(5px);
     }
 
     &--version--mobile {
@@ -56,6 +58,11 @@
     font-style: rem(21px);
     font-weight: bold;
     margin-bottom: rem(8px);
+
+    &::after {
+      content: url(../../img/Polygon.svg);
+      margin-left: rem(4px);
+    }
 
     @include tablets {
       margin-bottom: rem(16px);
@@ -98,6 +105,14 @@
       padding: 0 13%;
     }
     
+  }
+}
+
+.team__item.active {
+  .team__title {
+    &::after {
+      transform: rotate(-180deg);
+    }
   }
 }
 

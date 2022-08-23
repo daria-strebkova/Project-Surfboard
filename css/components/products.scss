@@ -15,7 +15,6 @@
 
   &__item {
     display: flex;
-    flex: 0 0 100%;
 
     @include tablets {
       flex-direction: column;
@@ -59,7 +58,7 @@
 
   &__desc {
     margin-bottom: rem(24px);
-    margin-right: 33px;
+    margin-right: rem(33px);
 
     @include tablets {
       margin-right: 0;

@@ -1,5 +1,7 @@
 .modal {
+  background: #313131;
   display: none;
+  z-index: 1000;
 
   &.error-modal {
     .modal__content {
