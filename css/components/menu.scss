@@ -39,10 +39,6 @@
   margin-bottom: rem(10px);
   margin-right: rem(26px);
 
-  &:last-child {
-    margin-right: 0;
-  }
-
   @include phones {
     margin-right: 0;
   }

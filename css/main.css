@@ -303,9 +303,6 @@ button {
   margin-bottom: 0.5555555556rem;
   margin-right: 1.4444444444rem;
 }
-.menu__item:last-child {
-  margin-right: 0;
-}
 @media screen and (max-width: 480px) {
   .menu__item {
     margin-right: 0;
@@ -456,6 +453,11 @@ button {
   text-align: center;
   text-transform: uppercase;
 }
+@media screen and (max-width: 480px) {
+  .section__title {
+    font-size: 36px;
+  }
+}
 
 .headline {
   text-align: center;
@@ -513,7 +515,7 @@ button {
 @media screen and (max-width: 480px) {
   .benefits__item {
     padding: 0;
-    margin-bottom: 2.3888888889rem;
+    margin-bottom: 1.7222222222rem;
   }
 }
 .benefits__item:before {
@@ -850,6 +852,10 @@ button {
         -ms-flex-pack: center;
             justify-content: center;
   }
+}
+
+.input-error {
+  border-color: rgb(233, 89, 89);
 }
 
 .radio {
@@ -1405,9 +1411,20 @@ button {
 .team__item--version--mobile {
   margin-bottom: 0.5555555556rem;
 }
+@media screen and (max-width: 480px) {
+  .team__item {
+    margin-bottom: 0.4444444444rem;
+  }
+}
 .team__member {
   height: 16.1111111111rem;
   margin-bottom: 1.1111111111rem;
+}
+@media screen and (max-width: 480px) {
+  .team__member {
+    height: 10rem;
+    margin-bottom: 0.7222222222rem;
+  }
 }
 .team__title {
   color: #292929;
@@ -1453,6 +1470,12 @@ button {
     display: inline;
   }
 }
+@media screen and (max-width: 480px) {
+  .team__img {
+    height: 10rem;
+    width: 7.6666666667rem;
+  }
+}
 .team__profession {
   font-weight: 400;
 }
@@ -1471,8 +1494,8 @@ button {
 }
 
 .team__item.active .team__title::after {
-  -webkit-transform: rotate(-180deg);
-          transform: rotate(-180deg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .modal {
@@ -1492,7 +1515,7 @@ button {
 
 .modal__container {
   background: #fff;
-  padding: 35px 60px;
+  padding: 1.9444444444rem 3.3333333333rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1506,6 +1529,6 @@ button {
 }
 
 .modal__content {
-  margin-bottom: 15px;
+  margin-bottom: 0.8333333333rem;
   color: #000;
 }

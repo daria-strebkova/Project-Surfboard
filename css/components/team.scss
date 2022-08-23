@@ -43,12 +43,23 @@
     &--version--mobile {
       margin-bottom: rem(10px);
     }
+
+    @include phones {
+      margin-bottom: rem(8px);
+    }
   }
 
   &__member {
     height: rem(290px);
     margin-bottom: rem(20px);
+
+    @include phones {
+      height: rem(180px);
+      margin-bottom: rem(13px);
+    }
   }
+
+ 
 
   &__title {
     color: #292929;
@@ -82,11 +93,18 @@
         display: none;
       }
     }
+
+    
   }
 
   &__img {
     @include tablets{
       display: inline;
+    }
+
+    @include phones {
+      height: rem(180px);
+      width: rem(138px);
     }
   }
 
@@ -111,7 +129,7 @@
 .team__item.active {
   .team__title {
     &::after {
-      transform: rotate(-180deg);
+      transform: rotate(180deg);
     }
   }
 }

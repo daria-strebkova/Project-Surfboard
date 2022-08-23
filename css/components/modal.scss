@@ -20,13 +20,13 @@
 
 .modal__container {
   background: #fff;
-  padding: 35px 60px;
+  padding: rem(35px) rem(60px);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .modal__content {
-  margin-bottom: 15px;
+  margin-bottom: rem(15px);
   color: #000;
 }
