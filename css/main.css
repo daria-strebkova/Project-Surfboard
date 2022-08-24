@@ -1442,7 +1442,7 @@ button {
   margin-bottom: 0.4444444444rem;
 }
 .team__title::after {
-  content: url(../../img/Polygon.svg);
+  content: url(../img/Polygon.svg);
   margin-left: 0.2222222222rem;
 }
 @media screen and (max-width: 768px) {

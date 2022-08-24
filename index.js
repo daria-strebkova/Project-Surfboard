@@ -144,7 +144,7 @@ $(".form").submit((e) => {
     })
 
     request.fail((data) => {
-      const message = data.responseJSON.message;
+      const message = "Ошибка сервера!"
       content.text(message);
       modal.addClass("error-modal");     
     })
