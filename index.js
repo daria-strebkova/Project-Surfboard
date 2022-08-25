@@ -74,6 +74,43 @@ $(".team__title").click(e =>{
   }
 })
 
+///products-menu///
+
+const mesureWidth = () => {
+  return 500;
+}
+
+const closeEveryItemInContainer = container => {
+  const items = container.find(".products-menu__item");
+  const content = container.find(".products-menu__content");
+
+  items.removeClass("active");
+  content.width(0);
+}
+
+const openItem = item => {
+  const hiddenContent = item.find(".products-menu__content");
+  const reqWidth = mesureWidth();
+
+  item.addClass("active");
+  hiddenContent.width(reqWidth);
+}
+
+$(".products-menu__title").click((e) => {
+  e.preventDefault();
+
+  const $this = $(e.currentTarget);
+  const item = $this.closest(".products-menu__item");
+  const itemOpen = item.hasClass("active");
+  const container = $this.closest(".products-menu__list")
+
+  if (itemOpened) {
+    closeEveryItemInContainer()
+  }else{
+    openItem(item);
+  }
+})
+
 ///reviews-menu///
 
 const findBlockByAlias = alias => {
@@ -144,7 +181,7 @@ $(".form").submit((e) => {
     })
 
     request.fail((data) => {
-      const message = "Ошибка сервера!"
+      const message = data.responseJSON ? data.responseJSON.message : "Ошибка сервера!";
       content.text(message);
       modal.addClass("error-modal");     
     })
@@ -163,3 +200,16 @@ $(".app-close-modal").click((e) => {
 
   $.fancybox.close();
 })
+
+///map///
+
+let myMap;
+
+const init = () => {
+  myMap = new ymaps.Map("map", {
+    center: [55.76, 37.64],
+    zoom: 7
+  });
+}
+
+ymaps.ready(init);
