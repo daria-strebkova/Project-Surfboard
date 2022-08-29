@@ -3,9 +3,14 @@
   top: 34%;
   right: 4%;
   z-index: $z-fixed-menu;
+  color: #fff;
 
   @include tablets {
     display: none;
+  }
+
+  &--shadowed {
+    color: #000;
   }
 }
 
@@ -14,9 +19,11 @@
 
   &--active {
     .fixed-menu__link {
-      border-color: #fff;
+      border-color: currentColor;
     }
   }
+
+  
 }
 
 .fixed-menu__link {
@@ -33,10 +40,11 @@
     width: rem(6px);
     height: rem(6px);
     border-radius: 50%;
-    background: #fff;
+    background: currentColor;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 }
+

@@ -3,24 +3,18 @@
   position: relative;
   color: #fff;
   background-blend-mode: darken;
-
-
-  .products-menu-section:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
-  }
+  justify-content: start;
 }
 
 .products-menu-section__title {
-  vertical-align: top;
   text-align: start;
-  margin-left: 84px;
+  margin-left: rem(84px);
+  margin-top: rem(109px);
+
+  @include phones {
+    margin-left: rem(10px);
+    font-size: rem(40px);
+  }
 }
 
 .products-menu__list {
@@ -37,24 +31,28 @@
 
 .products-menu__title {
   position: relative;
-  width: 100px;
-  
-  .products-menu-title:after {
+  width: rem(100px);
+
+  @include phones {
+    width: rem(90px);
+  }
+
+  &:after {
     content: "";
     display: block;
-    position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    position: absolute;
     background: rgba(0, 0, 0, 0.4);
   }
 }
 
 .products-menu__title.products-menu-section__title {
   position: absolute;
-  top: 80px;
-  left: 71px;
+  top: rem(80px);
+  left: rem(71px);
   color: #fff;
 }
 
@@ -74,7 +72,7 @@
   transform-origin: 0 0;
   white-space: nowrap;
   line-height: 1;
-  font-size: 48px;
+  font-size: rem(48px);
   font-weight: bold; 
 }
 
@@ -87,14 +85,13 @@
 }
 
 .products-menu__container {
-  padding: 40px 73px 45px 26px;
+  padding: rem(40px) rem(73px) rem(45px) rem(26px);
 }
 
 .products-menu__close {
   position: absolute;
-  top: 20px;
-  right: 25px;
+  top: rem(20px);
+  right: rem(25px);
   border: none;
   background: transparent;
 }
-
