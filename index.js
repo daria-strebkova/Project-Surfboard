@@ -158,7 +158,7 @@ $(".interactive-avatar__link").click(e => {
 
 ///player///
 
-let player;     
+let player;
 const playerContainer = $(".player");
 
 let eventsInit = () => {
@@ -188,7 +188,20 @@ let eventsInit = () => {
   $(".player__splash").click(e => {
     player.playVideo();
   })
+
+  $(".player__volume").click(e => {
+    const barVolume = $(e.currentTarget);
+    const clickedPositionVolume = e.originalEvent.layerX;
+    const newButtonPositionVolume = (clickedPositionVolume / barVolume.width());
+    player.setVolume((newButtonPositionVolume * 100));
+
+    $(".player__volume-button").css({
+      left: `${clickedPositionVolume}px`
+    });
+  });
 };
+
+
 
 const formatTime = timeSec => {
   const roundTime = Math.round(timeSec);
@@ -199,7 +212,7 @@ const formatTime = timeSec => {
   function addZero(num) {
     return num < 10 ? `0${num}` : num;
   }
-  
+
   return `${minutes} : ${seconds}`;
 }
 
@@ -263,11 +276,11 @@ function onYouTubeIframeAPIReady() {
       rel: 0,
       autoplay: 0,
       modestbranding: 0
-    }  
+    }
   });
 }
 
- eventsInit ();
+eventsInit();
 
 
 ///form///

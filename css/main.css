@@ -1760,6 +1760,9 @@ button {
 .player.paused .player__start:before {
   left: 0;
 }
+.player.paused .player__splash {
+  visibility: hidden;
+}
 
 .player__playback {
   height: 0.7777777778rem;
@@ -1835,4 +1838,5 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 4px;
 }
