@@ -1547,7 +1547,7 @@ button {
 }
 
 .products-menu-section {
-  background: url(../../img/menu-products.png) center center/cover no-repeat, rgba(0, 0, 0, 0.2);
+  background: url(../img/menu-products.png) center center/cover no-repeat, rgba(0, 0, 0, 0.2);
   position: relative;
   color: #fff;
   background-blend-mode: darken;
@@ -1684,11 +1684,11 @@ button {
   left: 0;
   bottom: 0;
   right: 0;
-  background: url(../../img/player.png) center center/cover no-repeat;
+  background: url(../img/player.png) center center/cover no-repeat;
   cursor: pointer;
 }
 .player__splash:before {
-  content: url(../../img/play-big.png);
+  content: url(../img/play-big.png);
   position: absolute;
   top: 50%;
   left: 50%;
