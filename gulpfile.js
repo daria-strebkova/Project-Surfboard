@@ -48,7 +48,7 @@ task('styles', () => {
     .pipe(reload({ stream: true }));
 });
 
- task('scripts', () => {
+task('scripts', () => {
   return src([...JS_LIBS, 'src/scripts/*.js'])
     .pipe(gulpif(env === 'dev', sourcemaps.init()))
     .pipe(concat('main.min.js', {newLine: ';'}))
@@ -59,9 +59,9 @@ task('styles', () => {
     .pipe(gulpif(env === 'dev', sourcemaps.write()))
     .pipe(dest(DIST_PATH))
     .pipe(reload({ stream: true }));
- });
+});
 
- task("icons", () => {
+task("icons", () => {
   return src('src/img/*.svg').pipe(
     svgo({
       plugins: [
@@ -80,6 +80,8 @@ task('styles', () => {
   }))
   .pipe(dest(`${DIST_PATH}/img`));
 });
+
+
 
 task('server', () => {
   browserSync.init({
