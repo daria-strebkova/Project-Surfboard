@@ -1,0 +1,55 @@
+$containerWidth: 940px;
+$baseFontSize: 18px;
+
+//breakpoints
+
+$tablets: 768px;
+$phones: 480px;
+
+//color
+$gray: #F8FAF9;
+
+//z-index
+$z-fixed-menu: 100;
+
+@import "media";
+
+//normalize
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
+//setups
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;700&display=swap');
+@import "layout";
+
+//components
+//@import "./components/*.scss";
+
+@import "components/hero";
+@import "components/header";
+@import "components/logo";
+@import "components/menu";
+@import "components/hamburger";
+@import "components/features";
+@import "components/feature";
+@import "components/button";
+@import "components/section";
+@import "components/headline";
+@import "components/benefits";
+@import "components/benefit";
+@import "components/reviews";
+@import "components/interactive-avatar";
+@import "components/form";
+@import "components/radio";
+@import "components/fixed-menu";
+@import "components/map-section";
+@import "components/footer";
+@import "components/contacts";
+@import "components/socials";
+@import "components/products";
+@import "components/fullscreen-menu";
+@import "components/dropdown";
+@import "components/arrow";
+@import "components/team";
+@import "components/modal";
+@import "components/products-menu";
+@import "components/player";
