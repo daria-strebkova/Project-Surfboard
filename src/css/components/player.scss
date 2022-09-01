@@ -37,11 +37,11 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: url(../img/Shortboards.jpg) center center/cover no-repeat;
+  background: url(./img/Shortboards.jpg) center center/cover no-repeat;
   cursor: pointer;
 
   &:before {
-    content: url(../img/play-big.png);
+    content: url(./img/play-big.png);
     position: absolute;
     top: 50%;
     left: 50%;

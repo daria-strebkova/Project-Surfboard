@@ -30,6 +30,12 @@ task("copy:html", () => {
     .pipe(reload({ stream: true }));
 });
 
+task("copy:img", () => {
+  return src(`${SRC_PATH}/img/*.*(png|jpg)`)
+    .pipe(dest(`${DIST_PATH}/img`))
+    .pipe(reload({ stream: true }));
+});
+
 task('styles', () => {
   return src([...STYLES_LIBS, "src/css/main.css"])
     .pipe(gulpif(env === "dev", sourcemaps.init()))
@@ -81,8 +87,6 @@ task("icons", () => {
   .pipe(dest(`${DIST_PATH}/img`));
 });
 
-
-
 task('server', () => {
   browserSync.init({
     server: {
@@ -95,6 +99,7 @@ task('server', () => {
 task("watch", () => {
   watch("./src/css/**/*.scss", series("styles"));
   watch('./src/*.html', series('copy:html'));
+  watch('./src/img/*.*(png|jpg)', series('copy:img'));
   watch('./src/scripts/*.js', series('scripts'));
   watch('./src/img/*.svg', series('icons'));
 })
@@ -104,7 +109,7 @@ task("watch", () => {
 task('default',
  series(
    'clean',
-   parallel('copy:html', 'styles', 'scripts', 'icons'),
+   parallel('copy:html', 'copy:img', 'styles', 'scripts', 'icons'),
    parallel('watch', 'server')
  )
 );
@@ -112,5 +117,5 @@ task('default',
 task('build',
  series(
    'clean',
-   parallel('copy:html', 'styles', 'scripts', 'icons'))
+   parallel('copy:html', 'copy:img', 'styles', 'scripts', 'icons'))
 );
