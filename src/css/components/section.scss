@@ -5,9 +5,10 @@
   justify-content: center;
 
   &--bg--font-color {
-    background: linear-gradient( rgba(0, 0, 0, 0.5)), url(./img/bgorder.jpg) center top no-repeat;
+    background:url(../img/bgorder.jpg) center top no-repeat, rgba(0,0,0,.2);
     color: #fff;
     background-size: cover;
+    background-blend-mode: darken;
   }
 
   &--bg--color--gray {

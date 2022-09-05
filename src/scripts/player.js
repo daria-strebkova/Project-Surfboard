@@ -1,123 +1,122 @@
-; (function () {
-  let player;
-  const playerContainer = $(".player");
 
-  let eventsInit = () => {
-    $(".player__start").click(e => {
-      e.preventDefault();
+let player;
+const playerContainer = $(".player");
 
-      if (playerContainer.hasClass("paused")) {
-        player.pauseVideo();
-      } else {
-        player.playVideo();
-      }
-    });
+let eventsInit = () => {
+  $(".player__start").click(e => {
+    e.preventDefault();
 
-    $(".player__playback").click(e => {
-      const bar = $(e.currentTarget);
-      const clickedPosition = e.originalEvent.layerX;
-      const newButtonPositionPercent = (clickedPosition / bar.width()) * 100;
-      const newPlaybackPositionSec = (player.getDuration() / 100) * newButtonPositionPercent;
-
-      $(".player__playback-button").css({
-        left: `${newButtonPositionPercent}%`
-      });
-
-      player.seekTo(newPlaybackPositionSec);
-    });
-
-    $(".player__splash").click(e => {
+    if (playerContainer.hasClass("paused")) {
+      player.pauseVideo();
+    } else {
       player.playVideo();
-    })
+    }
+  });
 
-    $(".player__volume").click(e => {
-      const barVolume = $(e.currentTarget);
-      const clickedPositionVolume = e.originalEvent.layerX;
-      const newButtonPositionVolume = (100 * clickedPositionVolume / barVolume.width());
-      player.setVolume(newButtonPositionVolume);
+  $(".player__playback").click(e => {
+    const bar = $(e.currentTarget);
+    const clickedPosition = e.originalEvent.layerX;
+    const newButtonPositionPercent = (clickedPosition / bar.width()) * 100;
+    const newPlaybackPositionSec = (player.getDuration() / 100) * newButtonPositionPercent;
 
-      $(".player__volume-button").css({
-        left: `${newButtonPositionVolume}%`
-      });
+    $(".player__playback-button").css({
+      left: `${newButtonPositionPercent}%`
     });
-  };
 
-  const formatTime = timeSec => {
-    const roundTime = Math.round(timeSec);
+    player.seekTo(newPlaybackPositionSec);
+  });
 
-    const minutes = addZero(Math.floor(roundTime / 60));
-    const seconds = addZero(roundTime - minutes * 60);
+  $(".player__splash").click(e => {
+    player.playVideo();
+  })
 
-    function addZero(num) {
-      return num < 10 ? `0${num}` : num;
-    }
+  $(".player__volume").click(e => {
+    const barVolume = $(e.currentTarget);
+    const clickedPositionVolume = e.originalEvent.layerX;
+    const newButtonPositionVolume = (100 * clickedPositionVolume / barVolume.width());
+    player.setVolume(newButtonPositionVolume);
 
-    return `${minutes} : ${seconds}`;
-  }
-
-  const onPlayerReady = () => {
-    let interval;
-    const durationSec = player.getDuration();
-
-    $(".player__duration-estimate").text(formatTime(durationSec));
-
-    if (typeof interval !== "undefined") {
-      clearInterval(interval);
-    }
-
-    interval = setInterval(() => {
-      const completedSec = player.getCurrentTime();
-      const completedPercent = (completedSec / durationSec) * 100;
-
-      $(".player__playback-button").css({
-        left: `${completedPercent}%`
-      });
-
-      $(".player__duration-competed").text(formatTime(completedSec));
-    }, 1000);
-  }
-
-  const onPlayerStateChange = event => {
-    /*
-      -1 (воспроизведение видео не начато)
-      0 (воспроизведение видео завершено)
-      1 (воспроизведение)
-      2 (пауза)
-      3 (буферизация)
-      5 (видео подают реплики).
-    */
-    switch (event.data) {
-      case 1:
-        playerContainer.addClass("active");
-        playerContainer.addClass("paused");
-        break;
-
-      case 2:
-        playerContainer.removeClass("active");
-        playerContainer.removeClass("paused");
-        break;
-    }
-  };
-
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('yt-player', {
-      height: "391",
-      width: "662",
-      videoId: "tFYtoGQDW_g",
-      events: {
-        "onReady": onPlayerReady,
-        "onStateChange": onPlayerStateChange
-      },
-      playerVars: {
-        controls: 0,
-        disablekb: 0,
-        showinfo: 0,
-        rel: 0,
-        autoplay: 0,
-        modestbranding: 0
-      }
+    $(".player__volume-button").css({
+      left: `${newButtonPositionVolume}%`
     });
+  });
+};
+
+const formatTime = timeSec => {
+  const roundTime = Math.round(timeSec);
+
+  const minutes = addZero(Math.floor(roundTime / 60));
+  const seconds = addZero(roundTime - minutes * 60);
+
+  function addZero(num) {
+    return num < 10 ? `0${num}` : num;
   }
 
-  eventsInit();
-})()
+  return `${minutes} : ${seconds}`;
+}
+
+const onPlayerReady = () => {
+  let interval;
+  const durationSec = player.getDuration();
+
+  $(".player__duration-estimate").text(formatTime(durationSec));
+
+  if (typeof interval !== "undefined") {
+    clearInterval(interval);
+  }
+
+  interval = setInterval(() => {
+    const completedSec = player.getCurrentTime();
+    const completedPercent = (completedSec / durationSec) * 100;
+
+    $(".player__playback-button").css({
+      left: `${completedPercent}%`
+    });
+
+    $(".player__duration-competed").text(formatTime(completedSec));
+  }, 1000);
+}
+
+const onPlayerStateChange = event => {
+  /*
+    -1 (воспроизведение видео не начато)
+    0 (воспроизведение видео завершено)
+    1 (воспроизведение)
+    2 (пауза)
+    3 (буферизация)
+    5 (видео подают реплики).
+  */
+  switch (event.data) {
+    case 1:
+      playerContainer.addClass("active");
+      playerContainer.addClass("paused");
+      break;
+
+    case 2:
+      playerContainer.removeClass("active");
+      playerContainer.removeClass("paused");
+      break;
+  }
+};
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('yt-player', {
+    height: "391",
+    width: "662",
+    videoId: "tFYtoGQDW_g",
+    events: {
+      "onReady": onPlayerReady,
+      "onStateChange": onPlayerStateChange
+    },
+    playerVars: {
+      controls: 0,
+      disablekb: 0,
+      showinfo: 0,
+      rel: 0,
+      autoplay: 0,
+      modestbranding: 0
+    }
+  });
+}
+
+eventsInit();
