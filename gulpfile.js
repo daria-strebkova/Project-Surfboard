@@ -37,7 +37,7 @@ task("copy:img", () => {
 });
 
 task('styles', () => {
-  return src([...STYLES_LIBS, "src/css/main.css"])
+  return src([...STYLES_LIBS, "src/main.css"])
     .pipe(gulpif(env === "dev", sourcemaps.init()))
     .pipe(concat('main.min.scss'))
     .pipe(sassGlob())
